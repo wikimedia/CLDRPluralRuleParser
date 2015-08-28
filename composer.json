@@ -1,0 +1,41 @@
+{
+	"name": "wikimedia/cldr-plural-rule-parser",
+	"description": "Evaluates plural rules specified in the CLDR project notation.",
+	"license": "GPL-2.0+",
+	"homepage": "https://www.mediawiki.org/wiki/CLDRPluralRuleParser",
+	"authors": [
+		{
+			"name": "Tim Starling",
+			"email": "tstarling@wikimedia.org"
+		},
+		{
+			"name": "Niklas Laxström",
+			"email": "niklas.laxstrom@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"CLDRPluralRuleParser\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"CLDRPluralRuleParser\\Test\\": "tests/"
+		}
+	},
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "^0.9.0.0",
+		"phpunit/phpunit": "^4.7.7.0",
+		"mediawiki/mediawiki-codesniffer": "^0.3.0.0"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpunit $PHPUNIT_ARGS",
+			"phpcs -p"
+		]
+	}
+}
