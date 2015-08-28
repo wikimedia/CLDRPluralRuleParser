@@ -2,8 +2,8 @@ CLDRPluralRuleParser
 =============
 
 CLDRPluralRuleParser is a PHP library for parsing
-[http://cldr.unicode.org/index/cldr-spec/plural-rules](plural rules) specified in the
-[http://cldr.unicode.org/index](CLDR project).
+[plural rules](http://cldr.unicode.org/index/cldr-spec/plural-rules) specified in the
+[CLDR project](http://cldr.unicode.org/index).
 
 This library does not contain the rules from the CLDR project, you have to get them yourself.
 
