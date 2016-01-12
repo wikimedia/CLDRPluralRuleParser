@@ -145,7 +145,7 @@ class Converter {
 				// Resolve higher precedence levels
 				$lastOp = end( $this->operators );
 				while ( $lastOp && self::$precedence[$token->name] <= self::$precedence[$lastOp->name] ) {
-					$this->doOperation( $lastOp, $this->operands );
+					$this->doOperation( $lastOp );
 					array_pop( $this->operators );
 					$lastOp = end( $this->operators );
 				}
@@ -155,7 +155,7 @@ class Converter {
 
 		// Finish off the stack
 		while ( $op = array_pop( $this->operators ) ) {
-			$this->doOperation( $op, $this->operands );
+			$this->doOperation( $op );
 		}
 
 		// Make sure the result is sane. The first case is possible for an empty
