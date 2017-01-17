@@ -18,7 +18,7 @@ $forms = ['syntax error', 'syntax errors'];
 
 for ( $i = 0; $i < 3; $i++ ) {
 	$index = Evaluator::evaluate( $i, $rules );
-	echo "This code has $i {$forms[$i]}\n";
+	echo "This code has $i {$forms[$index]}\n";
 }
 
 // This code has 0 syntax errors
