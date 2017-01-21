@@ -1,7 +1,7 @@
 # Configuration file for Doxygen
 
-PROJECT_NAME           = CLDR Plural Rule Parser
-PROJECT_BRIEF          = Parses CLDR plural rules
+PROJECT_NAME           = "CLDR Plural Rule Parser"
+PROJECT_BRIEF          = "Parses CLDR plural rules"
 OUTPUT_DIRECTORY       = doc
 JAVADOC_AUTOBRIEF      = YES
 QT_AUTOBRIEF           = YES
