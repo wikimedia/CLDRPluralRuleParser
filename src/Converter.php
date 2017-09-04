@@ -43,21 +43,21 @@ class Converter {
 	 *
 	 * @var array
 	 */
-	public $operators = array();
+	public $operators = [];
 
 	/**
 	 * The operand stack
 	 *
 	 * @var array
 	 */
-	public $operands = array();
+	public $operands = [];
 
 	/**
 	 * Precedence levels. Note that there's no need to worry about associativity
 	 * for the level 4 operators, since they return boolean and don't accept
 	 * boolean inputs.
 	 */
-	private static $precedence = array(
+	private static $precedence = [
 		'or' => 2,
 		'and' => 3,
 		'is' => 4,
@@ -69,7 +69,7 @@ class Converter {
 		'mod' => 5,
 		',' => 6,
 		'..' => 7,
-	);
+	];
 
 	/**
 	 * A character list defining whitespace, for use in strspn() etc.

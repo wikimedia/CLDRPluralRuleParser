@@ -17,7 +17,7 @@ class Range {
 	 *
 	 * @var array
 	 */
-	public $parts = array();
+	public $parts = [];
 
 	/**
 	 * Initialize a new instance of Range
@@ -29,7 +29,7 @@ class Range {
 		if ( $end === false ) {
 			$this->parts[] = $start;
 		} else {
-			$this->parts[] = array( $start, $end );
+			$this->parts[] = [ $start, $end ];
 		}
 	}
 
