@@ -11,7 +11,6 @@ namespace CLDRPluralRuleParser;
 use CLDRPluralRuleParser\Converter\Operator;
 use CLDRPluralRuleParser\Converter\Expression;
 use CLDRPluralRuleParser\Converter\Fragment;
-use CLDRPluralRuleParser\Error;
 
 /**
  * Helper class for converting rules to reverse polish notation (RPN).
