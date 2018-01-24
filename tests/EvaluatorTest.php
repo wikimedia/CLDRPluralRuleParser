@@ -8,28 +8,25 @@ namespace CLDRPluralRuleParser\Test;
 
 use CLDRPluralRuleParser\Evaluator;
 
-/**
- * @covers \CLDRPluralRuleParser\Evaluator
- */
 class EvaluatorTest extends \PHPUnit_Framework_TestCase {
 	/**
-	 * @dataProvider validTestCases
+	 * @dataProvider provideValidCases
 	 */
-	function testValidRules( $expected, $rules, $number, $comment ) {
+	public function testValidRules( $expected, $rules, $number, $comment ) {
 		$result = Evaluator::evaluate( $number, (array)$rules );
 		$this->assertEquals( $expected, $result, $comment );
 	}
 
 	/**
-	 * @dataProvider invalidTestCases
+	 * @dataProvider provideInvalidCases
 	 * @expectedException CLDRPluralRuleParser\Error
 	 */
-	function testInvalidRules( $rules, $comment ) {
+	public function testInvalidRules( $rules, $comment ) {
 		Evaluator::evaluate( 1, (array)$rules );
 	}
 
-	function validTestCases() {
-		$tests = [
+	public static function provideValidCases() {
+		return [
 			# expected, rule, number, comment
 			[ 0, 'n is 1', 1, 'integer number and is' ],
 			[ 0, 'n is 1', "1", 'string integer number and is' ],
@@ -139,17 +136,13 @@ class EvaluatorTest extends \PHPUnit_Framework_TestCase {
 			array( 1, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '10.0', 'bs other' ),
 			// @codingStandardsIgnoreEnd
 		];
-
-		return $tests;
 	}
 
-	function invalidTestCases() {
-		$tests = [
+	public static function provideInvalidCases() {
+		return [
 			[ 'n mod mod 5 is 1', 'mod mod' ],
 			[ 'n', 'just n' ],
 			[ 'n is in 5', 'is in' ],
 		];
-
-		return $tests;
 	}
 }
