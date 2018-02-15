@@ -8,7 +8,7 @@ namespace CLDRPluralRuleParser\Test;
 
 use CLDRPluralRuleParser\Evaluator;
 
-class EvaluatorTest extends \PHPUnit_Framework_TestCase {
+class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider provideValidCases
 	 */
