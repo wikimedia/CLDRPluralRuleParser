@@ -1,7 +1,7 @@
 {
 	"name": "wikimedia/cldr-plural-rule-parser",
 	"description": "Evaluates plural rules specified in the CLDR project notation.",
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"homepage": "https://www.mediawiki.org/wiki/CLDRPluralRuleParser",
 	"authors": [
 		{
