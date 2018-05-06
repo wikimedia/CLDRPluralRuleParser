@@ -1,4 +1,7 @@
-# Configuration file for Doxygen
+# Doxyfile for CLDRPluralRuleParser
+#
+# See <http://www.stack.nl/~dimitri/doxygen/manual/config.html>
+# for help on how to use this file to configure Doxygen.
 
 PROJECT_NAME           = "CLDR Plural Rule Parser"
 PROJECT_BRIEF          = "Parses CLDR plural rules"
@@ -10,6 +13,7 @@ INPUT                  = README.md src/
 FILE_PATTERNS          = *.php
 RECURSIVE              = YES
 USE_MDFILE_AS_MAINPAGE = README.md
+FILTER_PATTERNS        = *md=build/doxygen_escape.sh
 HTML_DYNAMIC_SECTIONS  = YES
 GENERATE_TREEVIEW      = YES
 TREEVIEW_WIDTH         = 250
