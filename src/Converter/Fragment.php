@@ -7,8 +7,8 @@
 
 namespace CLDRPluralRuleParser\Converter;
 
-use CLDRPluralRuleParser\Error;
 use CLDRPluralRuleParser\Converter;
+use CLDRPluralRuleParser\Error;
 
 /**
  * Helper for Converter.
