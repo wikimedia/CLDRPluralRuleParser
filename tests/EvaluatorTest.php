@@ -19,9 +19,9 @@ class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider provideInvalidCases
-	 * @expectedException CLDRPluralRuleParser\Error
 	 */
 	public function testInvalidRules( $rules, $comment ) {
+		$this->expectException( \CLDRPluralRuleParser\Error::class );
 		Evaluator::evaluate( 1, (array)$rules );
 	}
 
