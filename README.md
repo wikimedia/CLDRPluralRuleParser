@@ -9,7 +9,7 @@ This library does not contain the rules from the CLDR project, you have to get t
 
 Here is how you use it:
 
-<pre lang="php">
+```php
 use CLDRPluralRuleParser\Evaluator;
 
 // Example for English
@@ -24,7 +24,7 @@ for ( $i = 0; $i < 3; $i++ ) {
 // This code has 0 syntax errors
 // This code has 1 syntax error
 // This code has 2 syntax errors
-</pre>
+```
 
 License
 -------
