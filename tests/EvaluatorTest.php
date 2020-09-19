@@ -10,6 +10,7 @@ use CLDRPluralRuleParser\Evaluator;
 
 class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 	/**
+	 * @covers CLDRPluralRuleParser\Evaluator::evaluate
 	 * @dataProvider provideValidCases
 	 */
 	public function testValidRules( $expected, $rules, $number, $comment ) {
@@ -18,6 +19,7 @@ class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	/**
+	 * @covers CLDRPluralRuleParser\Evaluator::evaluate
 	 * @dataProvider provideInvalidCases
 	 */
 	public function testInvalidRules( $rules, $comment ) {

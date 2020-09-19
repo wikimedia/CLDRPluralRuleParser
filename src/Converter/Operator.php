@@ -71,7 +71,7 @@ class Operator extends Fragment {
 	 * @param int $pos The length
 	 * @param int $length
 	 */
-	function __construct( Converter $parser, $name, $pos, $length ) {
+	public function __construct( Converter $parser, $name, $pos, $length ) {
 		parent::__construct( $parser, $pos, $length );
 		if ( isset( self::$aliasMap[$name] ) ) {
 			$name = self::$aliasMap[$name];

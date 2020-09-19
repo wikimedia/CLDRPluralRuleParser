@@ -17,18 +17,29 @@ use CLDRPluralRuleParser\Error;
 class Fragment {
 	public $parser, $pos, $length, $end;
 
-	function __construct( Converter $parser, $pos, $length ) {
+	/**
+	 * @param Converter $parser
+	 * @param int $pos
+	 * @param int $length
+	 */
+	public function __construct( Converter $parser, $pos, $length ) {
 		$this->parser = $parser;
 		$this->pos = $pos;
 		$this->length = $length;
 		$this->end = $pos + $length;
 	}
 
+	/**
+	 * @param string $message
+	 */
 	public function error( $message ) {
 		$text = $this->getText();
 		throw new Error( "$message at position " . ( $this->pos + 1 ) . ": \"$text\"" );
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getText() {
 		return substr( $this->parser->rule, $this->pos, $this->length );
 	}
