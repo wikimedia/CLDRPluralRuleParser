@@ -73,23 +73,23 @@ class Converter {
 	/**
 	 * A character list defining whitespace, for use in strspn() etc.
 	 */
-	const WHITESPACE_CLASS = " \t\r\n";
+	private const WHITESPACE_CLASS = " \t\r\n";
 
 	/**
 	 * Same for digits. Note that the grammar given in UTS #35 doesn't allow
 	 * negative numbers or decimal separators.
 	 */
-	const NUMBER_CLASS = '0123456789';
+	private const NUMBER_CLASS = '0123456789';
 
 	/**
 	 * A character list of symbolic operands.
 	 */
-	const OPERAND_SYMBOLS = 'nivwft';
+	private const OPERAND_SYMBOLS = 'nivwft';
 
 	/**
 	 * An anchored regular expression which matches a word at the current offset.
 	 */
-	const WORD_REGEX = '/[a-zA-Z@]+/A';
+	private const WORD_REGEX = '/[a-zA-Z@]+/A';
 
 	/**
 	 * Convert a rule to RPN. This is the only public entry point.
