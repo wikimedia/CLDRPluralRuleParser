@@ -144,7 +144,9 @@ class Converter {
 					$token->error( 'unexpected operator' );
 				}
 				// Resolve higher precedence levels
+				/** @var Operator $lastOp */
 				$lastOp = end( $this->operators );
+				// @phan-suppress-next-line PhanUndeclaredProperty
 				while ( $lastOp && self::$precedence[$token->name] <= self::$precedence[$lastOp->name] ) {
 					$this->doOperation( $lastOp );
 					array_pop( $this->operators );
@@ -260,6 +262,7 @@ class Converter {
 		}
 
 		// The single-character operand symbols
+		// @phan-suppress-next-line PhanParamSuspiciousOrder
 		if ( strpos( self::OPERAND_SYMBOLS, $word1 ) !== false ) {
 			$token = $this->newNumber( $word1, $this->pos );
 			$this->pos++;

@@ -50,7 +50,7 @@ class Evaluator {
 	 * Evaluate a compiled set of rules returned by compile(). Do not allow
 	 * the user to edit the compiled form, or else PHP errors may result.
 	 *
-	 * @param string $number The number to be evaluated against the rules, in English, or it
+	 * @param string|int $number The number to be evaluated against the rules, in English, or it
 	 *   may be a type convertible to string.
 	 * @param array $rules The associative array of plural rules in pluralform => rule format.
 	 * @return int The index of the plural form which passed the evaluation
