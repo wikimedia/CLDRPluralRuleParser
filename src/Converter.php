@@ -55,6 +55,8 @@ class Converter {
 	 * Precedence levels. Note that there's no need to worry about associativity
 	 * for the level 4 operators, since they return boolean and don't accept
 	 * boolean inputs.
+	 *
+	 * @var array
 	 */
 	private static $precedence = [
 		'or' => 2,
@@ -124,7 +126,8 @@ class Converter {
 		// Iterate through all tokens, saving the operators and operands to a
 		// stack per Dijkstra's shunting yard algorithm.
 		/** @var Operator $token */
-		while ( false !== ( $token = $this->nextToken() ) ) {
+		$token = $this->nextToken();
+		while ( $token !== false ) {
 			// In this grammar, there are only binary operators, so every valid
 			// rule string will alternate between operator and operand tokens.
 			$expectOperator = !$expectOperator;
@@ -135,7 +138,6 @@ class Converter {
 					$token->error( 'unexpected operand' );
 				}
 				$this->operands[] = $token;
-				continue;
 			} else {
 				// Operator
 				if ( !$expectOperator ) {
@@ -150,11 +152,13 @@ class Converter {
 				}
 				$this->operators[] = $token;
 			}
+
+			$token = $this->nextToken();
 		}
 
 		// Finish off the stack
-		while ( $op = array_pop( $this->operators ) ) {
-			$this->doOperation( $op );
+		while ( $this->operators ) {
+			$this->doOperation( array_pop( $this->operators ) );
 		}
 
 		// Make sure the result is sane. The first case is possible for an empty
@@ -176,7 +180,7 @@ class Converter {
 	/**
 	 * Fetch the next token from the input string.
 	 *
-	 * @return Fragment The next token
+	 * @return Fragment|false The next token
 	 */
 	protected function nextToken() {
 		if ( $this->pos >= $this->end ) {

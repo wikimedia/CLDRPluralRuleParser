@@ -44,7 +44,7 @@ class Operator extends Fragment {
 	];
 
 	/**
-	 * Map converting from the abbrevation to the full form.
+	 * Map converting from the abbreviation to the full form.
 	 *
 	 * @var array
 	 */
@@ -56,6 +56,8 @@ class Operator extends Fragment {
 
 	/**
 	 * Map for converting the new operators introduced in Rev 33 to the old forms
+	 *
+	 * @var array
 	 */
 	private static $aliasMap = [
 		'%' => 'mod',

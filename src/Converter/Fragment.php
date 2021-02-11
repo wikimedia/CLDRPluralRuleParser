@@ -15,7 +15,25 @@ use CLDRPluralRuleParser\Error;
  * The base class for operators and expressions, describing a region of the input string.
  */
 class Fragment {
-	public $parser, $pos, $length, $end;
+	/**
+	 * @var Converter
+	 */
+	public $parser;
+
+	/**
+	 * @var int
+	 */
+	public $pos;
+
+	/**
+	 * @var int
+	 */
+	public $length;
+
+	/**
+	 * @var int
+	 */
+	public $end;
 
 	/**
 	 * @param Converter $parser
@@ -31,6 +49,8 @@ class Fragment {
 
 	/**
 	 * @param string $message
+	 *
+	 * @throws Error
 	 */
 	public function error( $message ) {
 		$text = $this->getText();
