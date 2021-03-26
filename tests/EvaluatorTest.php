@@ -113,9 +113,8 @@ class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 
 			# Revision 33 samples
 			# expected, rule, number, comment
-			// @codingStandardsIgnoreStart Ignore Generic.Files.LineLength.TooLong
-			array( 0, 'n in 1,3,5@integer 3~10, 103~110, 1003, … @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, …', 3, 'samples' ),
-			// @codingStandardsIgnoreEnd
+			// phpcs:ignore Generic.Files.LineLength
+			[ 0, 'n in 1,3,5@integer 3~10, 103~110, 1003, … @decimal 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 103.0, 1003.0, …', 3, 'samples' ],
 
 			# Revision 33 some test cases from CLDR
 			[ 0, 'i = 1 and v = 0 or i = 0 and t = 1', '0.1', 'pt one' ],
@@ -127,16 +126,16 @@ class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 			[ 1, 'i = 1 and v = 0 or i = 0 and t = 1', '0.2', 'pt other' ],
 			[ 1, 'i = 1 and v = 0 or i = 0 and t = 1', '10.0', 'pt other' ],
 			[ 1, 'i = 1 and v = 0 or i = 0 and t = 1', '100.0', 'pt other' ],
-			// @codingStandardsIgnoreStart Ignore Generic.Files.LineLength.TooLong
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '2', 'bs few' ),
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '4', 'bs few' ),
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '22', 'bs few' ),
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '102', 'bs few' ),
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '0.2', 'bs few' ),
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '0.4', 'bs few' ),
-			array( 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '10.2', 'bs few' ),
-			array( 1, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '10.0', 'bs other' ),
-			// @codingStandardsIgnoreEnd
+			// phpcs:disable Generic.Files.LineLength
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '2', 'bs few' ],
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '4', 'bs few' ],
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '22', 'bs few' ],
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '102', 'bs few' ],
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '0.2', 'bs few' ],
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '0.4', 'bs few' ],
+			[ 0, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '10.2', 'bs few' ],
+			[ 1, 'v = 0 and i % 10 = 2..4 and i % 100 != 12..14 or f % 10 = 2..4 and f % 100 != 12..14', '10.0', 'bs other' ],
+			// phpcs:enable
 		];
 	}
 
