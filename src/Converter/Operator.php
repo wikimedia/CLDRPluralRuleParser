@@ -88,7 +88,7 @@ class Operator extends Fragment {
 	 * @param Expression $right The right part of the expression
 	 * @return Expression The result of the operation
 	 */
-	public function operate( Expression $left, Expression $right ) : Expression {
+	public function operate( Expression $left, Expression $right ): Expression {
 		$typeSpec = self::OP_TYPES[$this->name];
 
 		$leftType = self::TYPE_SPEC_MAP[$typeSpec[0]];

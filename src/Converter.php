@@ -99,7 +99,7 @@ class Converter {
 	 * @param string $rule The rule to convert
 	 * @return string The RPN representation of the rule
 	 */
-	public static function convert( $rule ) : string {
+	public static function convert( $rule ): string {
 		$parser = new self( $rule );
 
 		return $parser->doConvert();
@@ -120,7 +120,7 @@ class Converter {
 	 *
 	 * @return string The RPN representation of the rule (e.g. "5 3 mod n is")
 	 */
-	protected function doConvert() : string {
+	protected function doConvert(): string {
 		$expectOperator = true;
 
 		// Iterate through all tokens, saving the operators and operands to a
@@ -308,7 +308,7 @@ class Converter {
 	 * @param int $pos
 	 * @return Expression The numerical expression
 	 */
-	protected function newNumber( string $text, int $pos ) : Expression {
+	protected function newNumber( string $text, int $pos ): Expression {
 		return new Expression( $this, 'number', $text, $pos, strlen( $text ) );
 	}
 
@@ -320,7 +320,7 @@ class Converter {
 	 * @param int $length
 	 * @return Operator The operator
 	 */
-	protected function newOperator( string $type, int $pos, int $length ) : Operator {
+	protected function newOperator( string $type, int $pos, int $length ): Operator {
 		return new Operator( $this, $type, $pos, $length );
 	}
 

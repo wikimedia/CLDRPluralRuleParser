@@ -36,7 +36,7 @@ class Evaluator {
 	 * @param array $rules The rules to compile
 	 * @return array An array of compile rules.
 	 */
-	public static function compile( array $rules ) : array {
+	public static function compile( array $rules ): array {
 		// We can't use array_map() for this because it generates a warning if
 		// there is an exception.
 		foreach ( $rules as &$rule ) {
@@ -55,7 +55,7 @@ class Evaluator {
 	 * @param array $rules The associative array of plural rules in pluralform => rule format.
 	 * @return int The index of the plural form which passed the evaluation
 	 */
-	public static function evaluateCompiled( $number, array $rules ) : int {
+	public static function evaluateCompiled( $number, array $rules ): int {
 		// Calculate the values of the operand symbols
 		$number = strval( $number );
 		if ( !preg_match( '/^ -? ( ([0-9]+) (?: \. ([0-9]+) )? )$/x', $number, $m ) ) {
