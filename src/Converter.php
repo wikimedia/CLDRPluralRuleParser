@@ -328,6 +328,7 @@ class Converter {
 	 * Throw an error
 	 * @param string $message
 	 * @throws Error
+	 * @return never
 	 */
 	protected function error( string $message ) {
 		throw new Error( $message );
