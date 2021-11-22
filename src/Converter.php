@@ -165,7 +165,7 @@ class Converter {
 			$this->doOperation( array_pop( $this->operators ) );
 		}
 
-		// Make sure the result is sane. The first case is possible for an empty
+		// Make sure the result is sensible. The first case is possible for an empty
 		// string input, the second should be unreachable.
 		if ( !count( $this->operands ) ) {
 			$this->error( 'condition expected' );
