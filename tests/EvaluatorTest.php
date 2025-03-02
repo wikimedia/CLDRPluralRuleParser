@@ -6,11 +6,15 @@
 
 namespace CLDRPluralRuleParser\Test;
 
+use CLDRPluralRuleParser\Error;
 use CLDRPluralRuleParser\Evaluator;
+use PHPUnit\Framework\TestCase;
 
-class EvaluatorTest extends \PHPUnit\Framework\TestCase {
+/**
+ * @covers \CLDRPluralRuleParser\Evaluator
+ */
+class EvaluatorTest extends TestCase {
 	/**
-	 * @covers CLDRPluralRuleParser\Evaluator::evaluate
 	 * @dataProvider provideValidCases
 	 */
 	public function testValidRules( $expected, $rules, $number, $comment ) {
@@ -19,15 +23,14 @@ class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers CLDRPluralRuleParser\Evaluator::evaluate
 	 * @dataProvider provideInvalidCases
 	 */
 	public function testInvalidRules( $rules, $comment ) {
-		$this->expectException( \CLDRPluralRuleParser\Error::class );
+		$this->expectException( Error::class );
 		Evaluator::evaluate( 1, (array)$rules );
 	}
 
-	public static function provideValidCases() {
+	public static function provideValidCases(): array {
 		return [
 			# expected, rule, number, comment
 			[ 0, 'n is 1', 1, 'integer number and is' ],
@@ -139,7 +142,7 @@ class EvaluatorTest extends \PHPUnit\Framework\TestCase {
 		];
 	}
 
-	public static function provideInvalidCases() {
+	public static function provideInvalidCases(): array {
 		return [
 			[ 'n mod mod 5 is 1', 'mod mod' ],
 			[ 'n', 'just n' ],
