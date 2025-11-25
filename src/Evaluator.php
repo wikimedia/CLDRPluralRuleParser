@@ -92,7 +92,7 @@ class Evaluator {
 			$nine = ord( '9' );
 
 			foreach ( explode( ' ', $rule ) as $token ) {
-				$ord = ord( $token );
+				$ord = ord( $token[0] );
 				if ( isset( $operandSymbols[$token] ) ) {
 					$stack[] = $operandSymbols[$token];
 				} elseif ( $ord >= $zero && $ord <= $nine ) {
