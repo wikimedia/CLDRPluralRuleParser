@@ -88,7 +88,7 @@ class Converter {
 	/**
 	 * A character list of symbolic operands.
 	 */
-	private const OPERAND_SYMBOLS = 'nivwft';
+	private const OPERAND_SYMBOLS = 'nivwftce';
 
 	/**
 	 * An anchored regular expression which matches a word at the current offset.
