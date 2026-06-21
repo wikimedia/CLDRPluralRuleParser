@@ -110,6 +110,27 @@ class EvaluatorTest extends TestCase {
 			[ 0, 'f is 3', '1.03', 'new operand f' ],
 			[ 0, 't is 3', '1.03', 'new operand t' ],
 
+			# Compact decimal exponent operands (c and e)
+			# c and e are synonyms; always 0 for plain decimal strings
+			[ 0, 'c is 0', '1.00', 'new operand c' ],
+			[ 0, 'e is 0', '1.00', 'new operand e' ],
+			[ 0, 'c is 0', '1.30', 'new operand c with decimal' ],
+			[ 0, 'e is 0', '1.30', 'new operand e with decimal' ],
+			[ 0, 'c is 0', 5, 'new operand c with integer' ],
+			[ 0, 'e is 0', 5, 'new operand e with integer' ],
+
+			[ 0, 'c is 6 and e is 6', '1.2c6', 'new operand c with exponent string' ],
+			[ 0, 'c is 6 and i is 1 and v is 1', '1.2c6', 'operands derived from prefix' ],
+			[ 0, 'e is 3 and i is 1 and v is 0', '1e3', 'new operand e with e string' ],
+
+			// phpcs:disable Generic.Files.LineLength
+			[ 0, 'e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5', '1000000', 'fr many with integer' ],
+			[ 0, 'e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5', '1c6', 'fr many with compact c notation' ],
+			[ 0, 'e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5', '1.2c6', 'fr many with compact decimal notation' ],
+			[ 1, 'e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5', '100000', 'fr not many' ],
+			[ 1, 'e = 0 and i != 0 and i % 1000000 = 0 and v = 0 or e != 0..5', '1c3', 'fr not many with compact c3 notation' ],
+			// phpcs:enable
+
 			# Revision 33 new operator aliases
 			# expected, rule, number, comment
 			[ 0, 'n % 3 is 1', 7, 'new % operator' ],
